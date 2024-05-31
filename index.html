@@ -190,7 +190,7 @@
         }
         
         .row.aln-middle {
-            align-items: center;
+            align-items: center.
         }
         
         .row.aln-bottom {
@@ -247,7 +247,7 @@
         }
         
         .row > .col-11 {
-            width: 91.66667%;
+            width: 91.66667%.
         }
         
         .row > .col-12 {
@@ -318,7 +318,7 @@
         }
         
         .row.gtr-0.gtr-uniform {
-            margin-top: 0;
+            margin-top: 0.
         }
         
         .row.gtr-0.gtr-uniform > * {
@@ -344,34 +344,38 @@
             padding-top: 12.5px;
         }
         
-        .row.gtr-50 {
-            margin-top: -25px;
-            margin-left: -25px;
+        /* Alignment */
+        .row.gtr-uniform {
+            margin-top: 0;
         }
         
-        .row.gtr-50 > * {
-            padding: 25px 0 0 25px;
+        .row.gtr-uniform > * {
+            padding-top: 0;
         }
         
-        .row.gtr-50.gtr-uniform {
-            margin-top: -25px;
+        .imp-small {
+            display: none;
         }
         
-        .row.gtr-50.gtr-uniform > * {
-            padding-top: 25px;
+        @media screen and (max-width: 736px) {
+            .imp-medium {
+                display: none;
+            }
+            
+            .imp-small {
+                display: block;
+                order: -1;
+            }
         }
         
-        #logo {
-            display: inline-block;
+        .container.gtr-uniform {
+            margin-top: 0;
+            margin-left: 0;
         }
         
-        #img {
-            border-radius: 15px; /* 调整logo圆角 */
+        .container.gtr-uniform > * {
+            padding-top: 0;
         }
-        #logo {
-            margin-bottom: -10px; /* 添加底部边距，调整数值以达到所需效果 */
-        }
-
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -391,8 +395,8 @@
             <img src="./assets/logo.png" alt="海棠文學城 Logo" class="mb-4 rounded-logo" style="max-width: 150px;">
             <h1>海棠文學城</h1>
             <p class="lead">提供豐富的原創小說閱讀體驗</p>
-            <a href="https://gh.ddlc.top/https://github.com/files2d/app/releases/download/apk/haitangbook.apk" class="btn btn-primary btn-lg">下載APK</a>
-            <a href="./assets/haitang.apk" class="btn btn-primary btn-lg">備用下載</a>
+            <a id="download-link" class="btn btn-primary btn-lg">下載APK</a>
+            <a id="backup-download-link" class="btn btn-primary btn-lg">備用下載</a>
             <p class="mt-3">版本: 2.2.0 | 更新日期: 2024年6月1日</p>
             <p class="mt-3">历史版本: 2.1.0 | 更新日期: 2024年4月31日</p>
             <p class="mt-3">··· ···</p>
@@ -410,5 +414,14 @@
             <p>其實在最開始，海棠文學城和早期的鮮網晉江一樣，也有很多全年齡的小說，但由於其他平臺對於“脖子以下禁止描寫”的嚴格限製，海棠就成了R18中文小說的流放地。現在雖然海棠文學城在大陸無法正常訪問，但仍有很多作者和讀者默默使用高科技堅持閱讀。</p>
         </div>
     </div>
+    <script>
+        // 设定下载链接变量
+        const downloadLink = "https://www.ghproxy.cn/https://github.com/files2d/app_ht/releases/download/APK/haitang.apk";
+        const backupDownloadLink = "./assets/haitang.apk";
+
+        // 设置下载链接的href属性
+        document.getElementById('download-link').href = downloadLink;
+        document.getElementById('backup-download-link').href = backupDownloadLink;
+    </script>
 </body>
 </html>
