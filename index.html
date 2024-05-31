@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="海棠文学城, 原创小说, 小说阅读, 下载页面, 文学平台">
+    <meta name="description" content="海棠文学城提供丰富的原创小说阅读体验，用户可以轻松找到并阅读他们喜爱的小说，并可以方便地将小说添加到书架上。">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
     <title>海棠文学城 - 下载页面</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/main.css">
@@ -31,6 +34,343 @@
             height: 5px;
             z-index: 999; /* 确保蓝线在header下面 */
         }
+        @import "fontawesome-all.min.css";
+        @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic";
+        
+        /* Basic Reset */
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f7f7f7 url(assets/bg01.png);
+            color: #474747;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16pt;
+            font-weight: 300;
+            line-height: 1.65em;
+            -webkit-text-size-adjust: none;
+        }
+        
+        a {
+            transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+            color: #37c0fb;
+            text-decoration: none;
+            border-bottom: dotted 1px;
+        }
+        
+        a:hover {
+            border-bottom-color: transparent;
+        }
+        
+        strong, b {
+            font-weight: 600;
+        }
+        
+        em, i {
+            font-style: italic;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: inherit;
+            font-weight: 600;
+            line-height: 1.75em;
+            margin-bottom: 1em;
+        }
+        
+        h2 {
+            font-size: 1.2em;
+            letter-spacing: -0.025em;
+        }
+        
+        h3 {
+            font-size: 1.2em;
+            letter-spacing: -0.025em;
+        }
+        
+        p, ul, ol, dl, table, blockquote {
+            margin-bottom: 2em;
+        }
+        
+        blockquote {
+            border-left: solid 0.5em #e0e0e0;
+            font-style: italic;
+            padding: 1em 0 1em 2em;
+        }
+        
+        hr {
+            border-top: solid 1px #e0e0e0;
+            margin-bottom: 1.5em;
+        }
+        
+        /* Container */
+        .container {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 1400px;
+        }
+        
+        @media screen and (max-width: 1680px) {
+            .container {
+                width: 1200px;
+            }
+        }
+        
+        @media screen and (max-width: 1280px) {
+            .container {
+                width: 960px;
+            }
+        }
+        
+        @media screen and (max-width: 980px) {
+            .container {
+                width: 95%;
+            }
+        }
+        
+        @media screen and (max-width: 840px) {
+            .container {
+                width: 95%;
+            }
+        }
+        
+        @media screen and (max-width: 736px) {
+            .container {
+                width: 90%;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100%;
+            }
+        }
+        
+        /* Flexbox Grid */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            align-items: stretch;
+        }
+        
+        .row > * {
+            box-sizing: border-box;
+        }
+        
+        .row.gtr-uniform > *:last-child {
+            margin-bottom: 0;
+        }
+        
+        .row.aln-left {
+            justify-content: flex-start;
+        }
+        
+        .row.aln-center {
+            justify-content: center;
+        }
+        
+        .row.aln-right {
+            justify-content: flex-end;
+        }
+        
+        .row.aln-top {
+            align-items: flex-start;
+        }
+        
+        .row.aln-middle {
+            align-items: center;
+        }
+        
+        .row.aln-bottom {
+            align-items: flex-end;
+        }
+        
+        .row > .imp {
+            order: -1;
+        }
+        
+        /* Column Sizes */
+        [class*="col-"] {
+            width: 100%;
+        }
+        
+        .row > .col-1 {
+            width: 8.33333%;
+        }
+        
+        .row > .col-2 {
+            width: 16.66667%;
+        }
+        
+        .row > .col-3 {
+            width: 25%;
+        }
+        
+        .row > .col-4 {
+            width: 33.33333%;
+        }
+        
+        .row > .col-5 {
+            width: 41.66667%;
+        }
+        
+        .row > .col-6 {
+            width: 50%;
+        }
+        
+        .row > .col-7 {
+            width: 58.33333%;
+        }
+        
+        .row > .col-8 {
+            width: 66.66667%;
+        }
+        
+        .row > .col-9 {
+            width: 75%;
+        }
+        
+        .row > .col-10 {
+            width: 83.33333%;
+        }
+        
+        .row > .col-11 {
+            width: 91.66667%;
+        }
+        
+        .row > .col-12 {
+            width: 100%;
+        }
+        
+        /* Offsets */
+        [class*="off-"] {
+            margin-left: 0;
+        }
+        
+        .row > .off-1 {
+            margin-left: 8.33333%;
+        }
+        
+        .row > .off-2 {
+            margin-left: 16.66667%;
+        }
+        
+        .row > .off-3 {
+            margin-left: 25%;
+        }
+        
+        .row > .off-4 {
+            margin-left: 33.33333%;
+        }
+        
+        .row > .off-5 {
+            margin-left: 41.66667%;
+        }
+        
+        .row > .off-6 {
+            margin-left: 50%;
+        }
+        
+        .row > .off-7 {
+            margin-left: 58.33333%;
+        }
+        
+        .row > .off-8 {
+            margin-left: 66.66667%;
+        }
+        
+        .row > .off-9 {
+            margin-left: 75%;
+        }
+        
+        .row > .off-10 {
+            margin-left: 83.33333%;
+        }
+        
+        .row > .off-11 {
+            margin-left: 91.66667%;
+        }
+        
+        .row > .off-12 {
+            margin-left: 100%;
+        }
+        
+        /* Gutters */
+        .row.gtr-0 {
+            margin-top: 0;
+            margin-left: 0;
+        }
+        
+        .row.gtr-0 > * {
+            padding: 0 0 0 0;
+        }
+        
+        .row.gtr-0.gtr-uniform {
+            margin-top: 0;
+        }
+        
+        .row.gtr-0.gtr-uniform > * {
+            padding-top: 0;
+        }
+        
+        /* Add other gutter sizes as needed */
+        
+        .row.gtr-25 {
+            margin-top: -12.5px;
+            margin-left: -12.5px;
+        }
+        
+        .row.gtr-25 > * {
+            padding: 12.5px 0 0 12.5px;
+        }
+        
+        .row.gtr-25.gtr-uniform {
+            margin-top: -12.5px;
+        }
+        
+        .row.gtr-25.gtr-uniform > * {
+            padding-top: 12.5px;
+        }
+        
+        .row.gtr-50 {
+            margin-top: -25px;
+            margin-left: -25px;
+        }
+        
+        .row.gtr-50 > * {
+            padding: 25px 0 0 25px;
+        }
+        
+        .row.gtr-50.gtr-uniform {
+            margin-top: -25px;
+        }
+        
+        .row.gtr-50.gtr-uniform > * {
+            padding-top: 25px;
+        }
+        
+        #logo {
+            display: inline-block;
+        }
+        
+        #img {
+            border-radius: 15px; /* 调整logo圆角 */
+        }
+        #logo {
+            margin-bottom: -10px; /* 添加底部边距，调整数值以达到所需效果 */
+        }
 
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -52,8 +392,13 @@
             <h1>海棠文學城</h1>
             <p class="lead">提供豐富的原創小說閱讀體驗</p>
             <a href="https://gh.ddlc.top/https://github.com/files2d/app/releases/download/apk/haitangbook.apk" class="btn btn-primary btn-lg">下載APK</a>
-            <p class="mt-3">版本: 1.0.0 | 更新日期: 2024年5月31日</p>
+            <a href="./assets/haitang.apk" class="btn btn-primary btn-lg">備用下載</a>
+            <p class="mt-3">版本: 2.2.0 | 更新日期: 2024年6月1日</p>
+            <p class="mt-3">历史版本: 2.1.0 | 更新日期: 2024年4月31日</p>
+            <p class="mt-3">··· ···</p>
+            <p class="mt-3">历史版本: 1.0.0 | 更新日期: 2019年9月28日</p>
         </div>
+
         
         <div class="mt-5">
             <h2>關於海棠文學城</h2>
@@ -63,10 +408,6 @@
             <p>海棠文學城的名字源於海棠這種美麗的花卉，而網站本身也如同海棠花一樣，在文學的世界中綻放光彩。海棠文學城內包含了“耽美”、“言情”、“同人/綜合/輕小說”三大分類，許多網文作者們會在這裏PO他們的原創故事。</p>
             <p>由於海棠站內的小說以含“肉”量高聞名，海棠文這個詞也演變為了肉文、高H文的代名詞。甚至還有了“晉江臉，起點心，海棠骨”的說法，就是用小說平臺的主流特色代錶人物的特色。</p>
             <p>其實在最開始，海棠文學城和早期的鮮網晉江一樣，也有很多全年齡的小說，但由於其他平臺對於“脖子以下禁止描寫”的嚴格限製，海棠就成了R18中文小說的流放地。現在雖然海棠文學城在大陸無法正常訪問，但仍有很多作者和讀者默默使用高科技堅持閱讀。</p>
-
-            <h2>🌸 為什麼用引力圈？🌸</h2>
-            <p>為了幫助創作者方便提現和省錢，我們有多種提現通路。跟PayPal比，我們可以幫你從手續費和兌換費用裏省超過 10%。用我們的價格計算器和加密貨幣轉換器來了解如何用引力圈省錢。</p>
-            <p>隻需郵件入駐！進來看一下吧~</p>
         </div>
     </div>
 </body>
