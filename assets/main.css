@@ -1,3 +1,27 @@
+.rounded-logo {
+    border-radius: 15px; /* 调整圆角大小 */
+}
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #2a2a2a;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1em 0;
+    text-align: center;
+    padding-bottom: 6px; /* 修改这里 */
+}
+
+#blue-line {
+    position: fixed;
+    width: 100%;
+    top: 62px; /* header高度加上蓝线高度 */
+    background-color: #63bdf5;
+    height: 5px;
+    z-index: 999; /* 确保蓝线在header下面 */
+}
 @import "fontawesome-all.min.css";
 @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic";
 
@@ -308,6 +332,38 @@ hr {
     padding-top: 12.5px;
 }
 
+/* Alignment */
+.row.gtr-uniform {
+    margin-top: 0;
+}
+
+.row.gtr-uniform > * {
+    padding-top: 0;
+}
+
+.imp-small {
+    display: none;
+}
+
+@media screen and (max-width: 736px) {
+    .imp-medium {
+        display: none;
+    }
+    
+    .imp-small {
+        display: block;
+        order: -1;
+    }
+}
+
+.container.gtr-uniform {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.container.gtr-uniform > * {
+    padding-top: 0;
+}
 .row.gtr-50 {
     margin-top: -25px;
     margin-left: -25px;
