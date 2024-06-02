@@ -198,6 +198,26 @@
             alert('将跳转到提交页面！');
             window.open('https://submit.haitangwx.xyz/', '_blank');
         }
+        //自动滑动到底部
+        function scrollToBottom() {
+            let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const bottom = document.body.scrollHeight - window.innerHeight;
+            const scrollStep = 5; // 滚动步长，可以根据需要调整
+            const scrollInterval = 20; // 滚动间隔，可以根据需要调整
+
+            const scroll = setInterval(function() {
+                if (currentScroll < bottom) {
+                    window.scrollBy(0, scrollStep);
+                    currentScroll += scrollStep;
+                } else {
+                    clearInterval(scroll);
+                }
+            }, scrollInterval);
+        }
+
+        window.onload = function() {
+            scrollToBottom();
+        }
     </script>
 </body>
 </html>
