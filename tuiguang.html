@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="海棠文学城, 原创小说, 小说阅读, 下载页面, 文学平台">
+    <meta name="description" content="海棠文学城提供丰富的原创小说阅读体验，用户可以轻松找到并阅读他们喜爱的小说，并可以方便地将小说添加到书架上。">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
+    <title>海棠文学城 - 下载页面</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        .text-box {
+            border: 2px dashed #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .copy-button, .example-button, .submit-button{
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.8); /* 透明色 */
+            color: #007bff;
+            border: 2px dashed #007bff;
+            border-radius: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .copy-button:hover, .example-button:hover, .submit-button:hover{
+            background-color: #007bff;
+            color: white;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+        .close {
+            color: #aaa;
+            font-size: 16px;
+            position: absolute;
+            font-weight: bold;
+            cursor: pointer;
+            right: 5px;
+            top: 5px;
+        }
+        .close:hover,
+        .close:focus {
+            color: #ce2e27;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div id="logo">
+            <a href="/">
+                <img src="./assets/newlogo.gif" width="256" height="40" alt="海棠文化線上文學城" title="海棠文化線上文學城">
+            </a>
+        </div>
+        <div id="blue-line"></div>
+    </header>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="text-center">
+            <img src="./assets/logo.png" alt="海棠文學城 Logo" class="mb-4 rounded-logo" style="max-width: 150px;">
+            <h1>海棠文學城</h1>
+            <p class="lead">提供豐富的原創小說閱讀體驗</p>
+            <a id="download-link" class="btn btn-primary btn-lg">下載APK</a>
+            <a id="backup-download-link" class="btn btn-primary btn-lg">備用下載</a>
+        </div>
+
+        <div class="mt-5">
+            <h2>推廣後獲取邀請碼</h2>
+            <p>海棠文化線上文學城，複製文本，進行推廣，任何社交平臺均可。</p>
+            <p>推薦在常見社交軟體如“X(Twitter)”|“Weibo”|“Douban”等平臺推廣。</p>
+            
+        </div>
+
+        <div class="button-container" id="submit-button-container" style="display: none;">
+            <button class="submit-button" onclick="submitInfo()">提交推廣後的信息</button>
+        </div>
+        <div class="text-box" id="text-box">
+            <p id="random-text">歡迎來到海棠文學城，享受原創小說的魅力！</p>
+        </div>
+        <div class="button-container">
+            <button class="copy-button" onclick="copyText()">一鍵複製</button>
+            <button class="example-button" onclick="showExample()">示例推廣</button>
+        </div>
+        <p id="random-text-tag" style="display: none;"></p>
+    </div>
+
+    <!-- 彈窗 -->
+    <div id="exampleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeExample()">&times;</span>
+            <img src="./assets/example.png" alt="示例推廣" style="max-width: 100%; height: auto;border-radius: 5px;">
+            <span>示例圖片</span>
+        </div>
+    </div>
+
+    
+    <script>
+        // 设定下载链接变量
+        const downloadLink = "https://www.ghproxy.cn/https://github.com/files2d/app_ht/releases/download/APK/haitang.apk";
+        const backupDownloadLink = "./assets/haitang.apk";
+        // 设置下载链接的href属性
+        document.getElementById('download-link').href = downloadLink;
+        document.getElementById('backup-download-link').href = backupDownloadLink;
+        
+        // 随机文案
+        const commonText = "#海棠文学 #海棠文化";
+        const linkTexts = [
+            "https://haitangwx.xyz/",
+            "https:/app.haitangwx.xyz/"
+        ];
+        const texts = [
+            "今天的快乐，感谢海棠文化 \n 网站：",
+            "海棠文化线上文学城 \n 网站：",
+            "哈哈！被我摸索到海棠文学网了！小黄文的世界我来了！！！ \n 网站",
+            "海棠文化线上文学城APP上线啦! \n 网站",
+            "海棠文学城欢迎你，哈哈哈哈 \n 网站"
+        ];
+        const otherTexts = [
+            "[最好再配張圖]"
+        ];
+
+        // 随机显示文案
+        const randomText = texts[Math.floor(Math.random() * texts.length)];
+        const randomlinkTexts = linkTexts[Math.floor(Math.random() * linkTexts.length)];
+        const finalText = `${commonText} ${randomText} ${randomlinkTexts} ${otherTexts}`;
+        document.getElementById('random-text').innerText = randomText + randomlinkTexts;
+        document.getElementById('random-text-tag').innerText = finalText;
+        // 一键复制功能
+        function copyText() {
+            const textToCopy = document.getElementById('random-text-tag').innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('文案:「' + commonText + randomText + '」已复制');
+                document.getElementById('submit-button-container').style.display = 'flex';
+            }).catch(err => {
+                console.error('复制失败！', err);
+            });
+        }
+
+        // 显示示例弹窗
+        function showExample() {
+            document.getElementById('exampleModal').style.display = "block";
+        }
+
+        // 关闭示例弹窗
+        function closeExample() {
+            document.getElementById('exampleModal').style.display = "none";
+        }
+
+        // 点击弹窗外部关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('exampleModal')) {
+                document.getElementById('exampleModal').style.display = "none";
+            }
+        }
+        // 提交推广信息
+        function submitInfo() {
+            alert('将跳转到提交页面！');
+            window.open('https://submit.haitangwx.xyz/', '_blank');
+        }
+    </script>
+</body>
+</html>
